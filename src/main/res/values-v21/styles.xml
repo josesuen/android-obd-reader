@@ -17,4 +17,10 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <style name="iav" parent="android:Theme.Material.Light.DarkActionBar">
+        <item name="android:colorPrimary">@color/iavdarkblue</item>
+        <item name="android:colorPrimaryDark">@color/iavdarkbluenavbar</item>
+        <item name="android:colorAccent">@color/iavgreen</item>
+    </style>
+
 </resources>

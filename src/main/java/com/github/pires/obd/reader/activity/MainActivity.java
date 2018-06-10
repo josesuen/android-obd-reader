@@ -43,6 +43,7 @@ import com.github.pires.obd.commands.engine.RPMCommand;
 import com.github.pires.obd.commands.engine.RuntimeCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 import com.github.pires.obd.reader.R;
+import com.github.pires.obd.reader.Vehicle;
 import com.github.pires.obd.reader.config.ObdConfig;
 import com.github.pires.obd.reader.io.AbstractGatewayService;
 import com.github.pires.obd.reader.io.LogCSVWriter;
@@ -72,6 +73,8 @@ import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectView;
 
+import static com.github.pires.obd.reader.R.id.model;
+import static com.github.pires.obd.reader.R.id.vehicle;
 import static com.github.pires.obd.reader.activity.ConfigActivity.getGpsDistanceUpdatePeriod;
 import static com.github.pires.obd.reader.activity.ConfigActivity.getGpsUpdatePeriod;
 
@@ -83,6 +86,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener, L
     private static final String TAG = MainActivity.class.getName();
     private static final int NO_BLUETOOTH_ID = 0;
     private static final int BLUETOOTH_DISABLED = 1;
+    private static final int NEW_DRIVE = 6;
     private static final int START_LIVE_DATA = 2;
     private static final int STOP_LIVE_DATA = 3;
     private static final int SETTINGS = 4;
@@ -407,13 +411,29 @@ public class MainActivity extends RoboActivity implements ObdProgressListener, L
         } else {
             btStatusTextView.setText(getString(R.string.status_bluetooth_ok));
         }
+        /*TextView txtmodel = (TextView) findViewById(R.id.model);
+        TextView txtbrand = (TextView) findViewById(R.id.brand);
+        TextView txtyear = (TextView) findViewById(R.id.year);
+        try {
+
+        Intent intent = getIntent();
+            String model = intent.getStringExtra("model");
+            Log.d("model", model);
+            txtmodel.setText(model);
+        } catch(Exception e){
+
+        }*/
     }
 
     private void updateConfig() {
         startActivity(new Intent(this, ConfigActivity.class));
     }
-
+    /*ABRE A TELA DE NOVA RODAGEM*/
+    private void newDrive() {
+        startActivityForResult(new Intent(getApplicationContext(), NewDrive.class), 99);
+    }
     public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(0, NEW_DRIVE, 0, getString(R.string.menu_new_drive));
         menu.add(0, START_LIVE_DATA, 0, getString(R.string.menu_start_live_data));
         menu.add(0, STOP_LIVE_DATA, 0, getString(R.string.menu_stop_live_data));
         menu.add(0, GET_DTC, 0, getString(R.string.menu_get_dtc));
@@ -432,6 +452,9 @@ public class MainActivity extends RoboActivity implements ObdProgressListener, L
                 return true;
             case SETTINGS:
                 updateConfig();
+                return true;
+            case NEW_DRIVE:
+                newDrive();
                 return true;
             case GET_DTC:
                 getTroubleCodes();
@@ -672,6 +695,12 @@ public class MainActivity extends RoboActivity implements ObdProgressListener, L
             } else {
                 Toast.makeText(this, R.string.text_bluetooth_disabled, Toast.LENGTH_LONG).show();
             }
+        }
+        if (resultCode == 99){
+            TextView txtmodel = (TextView) findViewById(R.id.model);
+            String model = data.getStringExtra("model");
+            Log.d("model", model);
+            txtmodel.setText(model);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

@@ -20,6 +20,24 @@
             android:textSize="@dimen/abc_text_size_display_3_material" />
 
         <TextView
+            android:id="@+id/brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand" />
+
+        <TextView
+            android:id="@+id/model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model" />
+
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Year" />
+
+        <TextView
             android:id="@+id/compass_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

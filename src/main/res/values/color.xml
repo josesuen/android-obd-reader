@@ -5,6 +5,14 @@
     <!-- Blue Grey 500 -->
     <color name="primary_dark">#455a64</color>
     <!-- Blue Grey 700 -->
-    <color name="accent">#ff5252</color>
+    <color name="accent">#6f9900</color>
     <!-- Red A200 -->
+    <color name="iavdarkblue">#0c3868</color>
+    <!-- Dark Blue IAV  -->
+    <color name="iavdarkbluenavbar">#071f3a</color>
+    <!-- Dark Blue IAV Bar  -->
+    <color name="iavgreen">#91c60e</color>
+    <!-- GREEN IAV  -->
+    #071f3a
+
 </resources>
