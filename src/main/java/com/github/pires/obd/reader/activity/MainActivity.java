@@ -698,9 +698,17 @@ public class MainActivity extends RoboActivity implements ObdProgressListener, L
         }
         if (resultCode == 99){
             TextView txtmodel = (TextView) findViewById(R.id.model);
+            TextView txtbrand = (TextView) findViewById(R.id.brand);
+            TextView txtyear = (TextView) findViewById(R.id.year);
+            TextView txtvin = (TextView) findViewById(R.id.vin);
             String model = data.getStringExtra("model");
-            Log.d("model", model);
+            String brand = data.getStringExtra("brand");
+            String year = data.getStringExtra("year");
+            String vin = data.getStringExtra("vin");
             txtmodel.setText(model);
+            txtbrand.setText(brand);
+            txtyear.setText(year);
+            txtvin.setText(vin);
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -726,12 +734,15 @@ public class MainActivity extends RoboActivity implements ObdProgressListener, L
      * Uploading asynchronous task
      */
     private class UploadAsyncTask extends AsyncTask<ObdReading, Void, Void> {
-
+        TextView txtvin = (TextView) findViewById(R.id.vin);
+        String vin = txtvin.getText().toString();
         @Override
         protected Void doInBackground(ObdReading... readings) {
             Log.d(TAG, "Uploading " + readings.length + " readings..");
             // instantiate reading service client
-            final String endpoint = prefs.getString(ConfigActivity.UPLOAD_URL_KEY, "");
+            //Configura endpoint para upload
+            String endpoint = "http://192.168.0.106:8080/drive/1/obdreading";
+            /*final String endpoint = prefs.getString(ConfigActivity.UPLOAD_URL_KEY, "");*/
             RestAdapter restAdapter = new RestAdapter.Builder()
                     .setEndpoint(endpoint)
                     .build();

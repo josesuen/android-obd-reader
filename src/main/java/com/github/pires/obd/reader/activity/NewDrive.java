@@ -48,6 +48,7 @@ public class NewDrive extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
             {
+                TextView txtvin = (TextView) findViewById(R.id.vin);
                 TextView txtmodel = (TextView) findViewById(R.id.model);
                 TextView txtbrand = (TextView) findViewById(R.id.brand);
                 TextView txtyear = (TextView) findViewById(R.id.year);
@@ -68,6 +69,8 @@ public class NewDrive extends Activity {
                         + spinnerData.get(position).getTorque());
                 txtengsize.setText("Engine size (L) : "
                         + spinnerData.get(position).getEng_size());
+                txtvin.setText("Engine size (L) : "
+                        + spinnerData.get(position).getVin());
 
                 /*Joga dados pra atividade principal*/
                 /*Intent passVehicle = new Intent(NewDrive.this, MainActivity.class);
@@ -86,8 +89,16 @@ public class NewDrive extends Activity {
 
     @Override
     public void onBackPressed(){
+        /*Quando retorna pra atividade principal manda os dados do carro selecionado*/
+        TextView txtmodel = (TextView) findViewById(R.id.model);
+        TextView txtbrand = (TextView) findViewById(R.id.brand);
+        TextView txtyear = (TextView) findViewById(R.id.year);
+        TextView txtvin = (TextView) findViewById(R.id.vin);
         Intent i = new Intent();
-        i.putExtra("model", "HARDCODE");
+        i.putExtra("model", txtmodel.getText().toString());
+        i.putExtra("brand", txtbrand.getText().toString());
+        i.putExtra("year", txtyear.getText().toString());
+        i.putExtra("vin", txtvin.getText().toString());
         setResult(99, i);
         finish();
     }
