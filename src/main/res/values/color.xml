@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- http://www.google.com/design/spec/style/color.html#color-color-palette -->
-    <color name="primary">#607d8b</color>
+    <color name="primary">#b2bec3</color>
     <!-- Blue Grey 500 -->
     <color name="primary_dark">#455a64</color>
     <!-- Blue Grey 700 -->
@@ -9,10 +9,10 @@
     <!-- Red A200 -->
     <color name="iavdarkblue">#0c3868</color>
     <!-- Dark Blue IAV  -->
-    <color name="iavdarkbluenavbar">#071f3a</color>
+    <color name="iavdarkbluenavbar">#05162a</color>
     <!-- Dark Blue IAV Bar  -->
     <color name="iavgreen">#91c60e</color>
     <!-- GREEN IAV  -->
-    #071f3a
+    <color name="cardBackgroud">#f7f7f7</color>
 
 </resources>

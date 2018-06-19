@@ -24,6 +24,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PowerManager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -411,18 +412,27 @@ public class MainActivity extends RoboActivity implements ObdProgressListener, L
         } else {
             btStatusTextView.setText(getString(R.string.status_bluetooth_ok));
         }
-        /*TextView txtmodel = (TextView) findViewById(R.id.model);
+        TextView txtvin = (TextView) findViewById(R.id.vin);
+        TextView txtmodel = (TextView) findViewById(R.id.model);
         TextView txtbrand = (TextView) findViewById(R.id.brand);
         TextView txtyear = (TextView) findViewById(R.id.year);
+        TextView txtdriveid = (TextView) findViewById(R.id.driveid);
         try {
 
         Intent intent = getIntent();
             String model = intent.getStringExtra("model");
-            Log.d("model", model);
+            String vin = intent.getStringExtra("vin");
+            String brand = intent.getStringExtra("brand");
+            String year = intent.getStringExtra("year");
+            int driveid = intent.getIntExtra("driveid", 0);
             txtmodel.setText(model);
+            txtvin.setText(vin);
+            txtbrand.setText(brand);
+            txtyear.setText(year);
+            txtdriveid.setText(String.valueOf(driveid));
         } catch(Exception e){
 
-        }*/
+        }
     }
 
     private void updateConfig() {
@@ -451,7 +461,7 @@ public class MainActivity extends RoboActivity implements ObdProgressListener, L
                 stopLiveData();
                 return true;
             case SETTINGS:
-                updateConfig();
+                //updateConfig();
                 return true;
             case NEW_DRIVE:
                 newDrive();
@@ -741,8 +751,8 @@ public class MainActivity extends RoboActivity implements ObdProgressListener, L
             Log.d(TAG, "Uploading " + readings.length + " readings..");
             // instantiate reading service client
             //Configura endpoint para upload
-            String endpoint = "http://192.168.0.106:8080/drive/1/obdreading";
-            /*final String endpoint = prefs.getString(ConfigActivity.UPLOAD_URL_KEY, "");*/
+            //String endpoint = "http://192.168.0.106:8080/drive/1/obdreading";
+            final String endpoint = prefs.getString(ConfigActivity.UPLOAD_URL_KEY, "");
             RestAdapter restAdapter = new RestAdapter.Builder()
                     .setEndpoint(endpoint)
                     .build();

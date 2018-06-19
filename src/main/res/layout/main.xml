@@ -9,178 +9,191 @@
     android:layout_margin="@dimen/activity_horizontal_margin"
     android:orientation="vertical">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="190dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/model"
+            android:id="@+id/vehicleinformation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="7dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="7dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="37dp"
-            android:text="Model"
-            app:layout_constraintHorizontal_bias="0.969"
-            app:layout_constraintLeft_toLeftOf="@+id/textView9"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/brand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="37dp"
-            android:text="Brand"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/year"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="162dp"
-            android:layout_marginStart="162dp"
-            android:layout_marginTop="37dp"
-            android:text="Year"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginRight="8dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:layout_weight="1"
             android:text="Vehicle information"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dashboard"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.502"
             tools:layout_editor_absoluteX="0dp"
-            tools:text="Dashboard" />
+            tools:layout_editor_absoluteY="0dp" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="33dp"
-            android:layout_marginLeft="49dp"
-            android:layout_marginStart="33dp"
-            android:layout_weight="2"
-            android:tag="SPEED"
-            android:text="@string/text_zero"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent" />
-
-        <TextView
-            android:id="@+id/compass_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="31dp"
-            android:layout_marginEnd="16dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="end"
-            android:text="@string/text_orientation_default"
-            android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginLeft="163dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            app:layout_constraintVertical_bias="1.0" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Brand"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="37dp" />
+
+            <TextView
+                android:id="@+id/model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Model"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="37dp" />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Year"
+                tools:layout_editor_absoluteX="162dp"
+                tools:layout_editor_absoluteY="37dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            >
+
+            <TextView
+                android:id="@+id/vin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="VIN"
+                tools:layout_editor_absoluteX="165dp"
+                tools:layout_editor_absoluteY="69dp" />
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/dashboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:text="Speed (km/h)"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:text="Direction"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="0dp"
-            app:layout_constraintTop_toBottomOf="@+id/compass_text"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="148dp" />
-
-        <TextView
-            android:id="@+id/vin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="84dp"
-            tools:layout_editor_absoluteY="62dp" />
-
-    </android.support.constraint.ConstraintLayout>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="16dp"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:tag="FUEL_CONSUMPTION"
-            android:text="@string/text_consumption_default"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="194dp" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="114dp"
+            tools:text="Drive Dashboard" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:tag="ENGINE_RUNTIME"
-            android:text="@string/text_runtime_default" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:tag="SPEED"
+                android:text="@string/text_zero"
+                android:textSize="38sp"
+                android:gravity="right"/>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="40sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="km/h"
+                tools:layout_editor_absoluteX="53dp"
+                tools:layout_editor_absoluteY="185dp" />
+
+            <TextView
+                android:id="@+id/rpm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="36sp"
+                android:gravity="right" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="30sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="rpm"
+                tools:layout_editor_absoluteX="187dp"
+                tools:layout_editor_absoluteY="185dp" />
+
+            <TextView
+                android:id="@+id/compass_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/text_orientation_default"
+                android:textSize="36sp"
+                tools:layout_editor_absoluteX="298dp"
+                tools:layout_editor_absoluteY="157dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:tag="ENGINE_RPM"
-            android:text="" />
-    </TableRow>
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            >
+
+
+            <TextView
+                android:id="@+id/consumption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:tag="FUEL_CONSUMPTION"
+                android:text="@string/text_consumption_default"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/compass_text" />
+
+            <TextView
+                android:id="@+id/runtime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:tag="ENGINE_RUNTIME"
+                android:text="@string/text_runtime_default"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <TextView
+                android:id="@+id/driveid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Driveid" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <ScrollView
         android:id="@+id/data_scroll"
         android:layout_width="fill_parent"
-        android:layout_height="213dp"
+        android:layout_height="142dp"
         android:layout_gravity="top"
-        android:layout_margin="10dp"
         android:elevation="2dp"
         android:outlineProvider="bounds">
 
@@ -195,29 +208,33 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/imageView3"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/text_gps"
-            android:textSize="@dimen/abc_text_size_medium_material" />
+            android:cropToPadding="true"
+            android:adjustViewBounds="true"
+            android:maxHeight="36dp"
+            android:baselineAlignBottom="true"
+            android:src="@drawable/satellite" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/text_bluetooth"
-            android:textSize="@dimen/abc_text_size_medium_material" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/text_obd"
-            android:textSize="@dimen/abc_text_size_medium_material" />
+            android:cropToPadding="true"
+            android:adjustViewBounds="true"
+            android:maxHeight="36dp"
+            android:baselineAlignBottom="true"
+            android:src="@drawable/bluetooth" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_weight="1"
+            android:cropToPadding="true"
+            android:adjustViewBounds="true"
+            android:maxHeight="48dp"
+            android:baselineAlignBottom="true"
+            android:src="@drawable/car_compact2" />
 
 
     </TableRow>

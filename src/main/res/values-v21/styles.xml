@@ -4,11 +4,18 @@
     <style name="AppBaseTheme" parent="android:Theme.Material.Light.DarkActionBar">
 
         <!--    color for the app bar -->
-        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimary">@color/iavdarkblue</item>
         <!--   darker variant for the status bar and contextual app bars -->
-        <item name="android:colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:colorPrimaryDark">@color/iavdarkblue</item>
         <!--   theme UI controls like checkboxes and text fields -->
         <item name="android:colorAccent">@color/accent</item>
+        <item name="colorPrimary">@color/iavdarkblue</item>
+        <item name="colorPrimaryDark">@color/iavdarkbluenavbar</item>
+        <item name="colorAccent">@color/iavgreen</item>
+        <item name="android:statusBarColor">@color/iavdarkbluenavbar</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/background_dark</item>
+        <item name="android:colorBackground">@color/background_material_light</item>
 
     </style>
 
